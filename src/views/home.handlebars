@@ -1,0 +1,21 @@
+<h1>Bienvenidos</h1>
+<h1>Lista de Productos</h1>
+    <ul>
+        {{#each products}}
+            <li>
+                <h2>{{title}}</h2>
+                <p>{{description}}</p>
+                <p>Precio: {{price}}</p>
+            </li>
+        {{/each}}
+    </ul>
+
+
+{{>realTimeProducts}}
+{{>chat}}
+
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/index.js"></script>

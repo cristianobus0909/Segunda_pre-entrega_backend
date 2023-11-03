@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Ejemplo de producto",
+    "description": "Este es un producto de ejemplo",
+    "price": 19.99,
+    "category": "Electrónicos",
+    "status": true,
+    "thumbnails": [
+      "imagen1.jpg",
+      "imagen2.jpg"
+    ],
+    "code": "PROD1223",
+    "stock": 100
+  }
+]
