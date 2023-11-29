@@ -1,21 +1,31 @@
-<h1>Bienvenidos</h1>
-<h1>Lista de Productos</h1>
-    <ul>
-        {{#each products}}
-            <li>
-                <h2>{{title}}</h2>
-                <p>{{description}}</p>
-                <p>Precio: {{price}}</p>
-            </li>
-        {{/each}}
+<div>
+    <h1 class="userName"></h1>
+</div>
+    
+<nav id="navbar-example2" class="navbar navbar-light bg-light px-3">
+    <a class="navbar-brand" href="#">E-commerce</a>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading1">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading2">Ultimo Agregado</a>
+        </li>
+
     </ul>
+</nav>
+<div class="listContainer text-center" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+    <h2 class="text-uppercase" id="scrollspyHeading1">Lista de Productos</h2>
+
+    {{>products}}
+    
+    <h2 id="scrollspyHeading2"><a class="nav-link" href="#scrollspyHeading1">🔺</a></h2>
+    
+</div>
 
 
-{{>realTimeProducts}}
-{{>chat}}
 
 
 
 
-<script src="/socket.io/socket.io.js"></script>
-<script src="/index.js"></script>
+

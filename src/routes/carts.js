@@ -1,6 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser';
-import cartManager from '../classes/cartManager.js';
+import cartManager from '../Dao/classes/cartManager.js';
 
 const routerCarts = express.Router();
 

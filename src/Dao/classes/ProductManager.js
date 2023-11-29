@@ -16,7 +16,7 @@ class ProductManager {
         }
         if(this.products.some((product)=>product.code === code)){
             console.log(`El producto con el codigo:${code}, ya exixte.`);
-            return;
+            return ;
         }
     
         let newProduct;
@@ -109,27 +109,33 @@ class ProductManager {
         }
     }
     deleteProduct(id) {
-        
         try {
             const data = fs.readFileSync(this.path, 'utf-8');
             let productsFromFile = JSON.parse(data);
-            
+    
+            console.log("Products from file before deletion:", productsFromFile);
+    
             const productIndex = productsFromFile.findIndex((product) => product.id === id);
-            if (productIndex === -1) {
-            console.log("Producto no encontrado.");
-            return;
+    
+            if (productIndex !== -1) {
+                console.log("Borrando producto con el ID:", id);
+                productsFromFile.splice(productIndex, 1);
+    
+                console.log("Products from file after deletion:", productsFromFile);
+                
+                fs.writeFileSync(this.path, JSON.stringify(productsFromFile, null, 2), 'utf-8');
+            } else {
+                console.log(`Producto con ID ${id} no encontrado.`);
             }
-            
-            productsFromFile.splice(productIndex, 1);
-            
-            fs.writeFileSync(this.path, JSON.stringify(productsFromFile, null, 2), 'utf-8');
         } catch (error) {
             console.error("Error al leer o escribir en el archivo:", error);
         }
-    }
+    }    
+    
+    
 }
 
-const productManager = new ProductManager('../products.json');
+const productManager = new ProductManager('../../data/products.json');
 
 export default productManager;
 

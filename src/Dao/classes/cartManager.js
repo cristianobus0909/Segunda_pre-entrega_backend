@@ -13,6 +13,7 @@ class CartManager {
         try {
             const generateUniqueId = Math.floor(Math.random() * 1000000);
             const newCart = { id: generateUniqueId, products: [] };
+            this.carts.push(newCart);
             fs.writeFileSync(this.cartDataPath, JSON.stringify(newCart, null, 2), 'utf-8');
             return newCart;
             } catch (error) {
@@ -67,6 +68,6 @@ class CartManager {
     
 
 }
-const cartManager = new CartManager('../carts.json');
+const cartManager = new CartManager("../../data/carts.json");
 
 export default cartManager;

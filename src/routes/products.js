@@ -1,4 +1,4 @@
-import productManager from '../classes/ProductManager.js';
+import productManager from '../Dao/classes/ProductManager.js';
 import express from "express";
 import bodyParser from 'body-parser';
 
